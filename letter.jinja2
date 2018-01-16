@@ -1,0 +1,8 @@
+Professor {{ instructor }},
+
+I will be starting your course {{ course_name }} meeting on {% for m in meeting recursive %}{{ m['days'] }} at {{ m['time'] }}{% if loop.revindex > 2 %}, {% elif loop.revindex == 2 %} and {% endif %}{% endfor %} this week. I am writing because I have a unique situation that I feel you should be aware of. My name will show up on your roster as {{ dead_name_full }}. This is my full and legal name; however, I go by the name {{ chosen_name['first'] }}. Please do not misunderstand that this is merely a matter of preference. I am transgender, and therefore being addressed as my proper name and use of {{ pronouns }} pronouns is essential to my academic success and well-being. I will be putting {{ chosen_name_full }} on my assignments and would appreciate it if you would call me that in class and use the proper pronouns when referring to me ({{ pronouns }}). If you have any questions for me regarding this, please don't hesitate to contact me.
+
+Thank you very much for your understanding,
+
+{{ chosen_name_full }}
+

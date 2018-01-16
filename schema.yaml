@@ -1,0 +1,40 @@
+$schema: 'http://json-schema.org/draft-06/schema#'
+title: write_letters.py data
+type: object
+properties:
+    dead_name: { $ref: '#/definitions/name' }
+    chosen_name: { $ref: '#/definitions/name' }
+    pronouns: { type: string }
+    classes:
+        type: array
+        items:
+            type: object
+            properties:
+                id:
+                    title: Class ID
+                    description: An identifier for the class that will
+                        be used in the output filename
+                    type: string
+                instructor:
+                    title: Instructor
+                    description: Instructor's last name
+                    type: string
+                course_name:
+                    title: Course name
+                    description: The long name of the course (i.e.,
+                        Intro to Sociology, not SOCI 1301)
+                    type: string
+                meeting:
+                    title: Meeting days and times
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            days: { enum: [M, T, W, R, F, MW, TR, MWF] }
+                            time: { type: string }
+definitions:
+    name:
+        type: object
+        properties:
+            first: { type: string }
+            last: { type: string }
